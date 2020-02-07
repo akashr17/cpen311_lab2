@@ -1,0 +1,99 @@
+D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Kbd_ctrl.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Kbd_ctrl.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module Kbd_ctrl
+
+Top level modules:
+	Kbd_ctrl
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Generate_Arbitrary_Divided_Clk32.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Generate_Arbitrary_Divided_Clk32.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module Generate_Arbitrary_Divided_Clk32
+
+Top level modules:
+	Generate_Arbitrary_Divided_Clk32
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/doublesync.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/doublesync.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module doublesync
+
+Top level modules:
+	doublesync
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_Scope_LCD.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_Scope_LCD.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module Write_Kbd_To_Scope_LCD
+
+Top level modules:
+	Write_Kbd_To_Scope_LCD
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Flash_controller.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Flash_controller.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module flash_controller
+
+Top level modules:
+	flash_controller
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v {0 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module simple_ipod_solution
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(125): near ";": Syntax error.
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(128): (vlog-2730) Undefined variable: 'LED'.
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(234): (vlog-2388) 'flash_mem_read' already declared in this scope (simple_ipod_solution).
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(235): (vlog-2388) 'flash_mem_waitrequest' already declared in this scope (simple_ipod_solution).
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(238): (vlog-2388) 'flash_mem_readdatavalid' already declared in this scope (simple_ipod_solution).
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(374): near ";": Syntax error.
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(375): near ";": Syntax error.
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(490): (vlog-2730) Undefined variable: 'speed_up_event_trigger'.
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(495): (vlog-2730) Undefined variable: 'speed_down_event_trigger'.
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(507): (vlog-2388) 'speed_up_event_trigger' already declared in this scope (simple_ipod_solution).
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(508): (vlog-2388) 'speed_down_event_trigger' already declared in this scope (simple_ipod_solution).
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(553): near "[": syntax error, unexpected '[', expecting IDENTIFIER or TYPE_IDENTIFIER
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(564): near "[": syntax error, unexpected '[', expecting IDENTIFIER or TYPE_IDENTIFIER
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(567): (vlog-2730) Undefined variable: 'Seven_Seg_Val'.
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(567): (vlog-2730) Undefined variable: 'Seven_Seg_Data'.
+
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/simple_ipod_solution.v(592): near "[": syntax error, unexpected '[', expecting IDENTIFIER or TYPE_IDENTIFIER
+
+} {4.0 6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 26.0 27.0 28.0 29.0 30.0} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/address_change.v {0 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/address_change.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module address_change
+** Error: D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/address_change.v(3): near "EOF": syntax error, unexpected end of source code, expecting ')'
+
+} {4.0 5.0} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/LCD_Scope_Encapsulated_pacoblaze_wrapper.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/LCD_Scope_Encapsulated_pacoblaze_wrapper.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module LCD_Scope_Encapsulated_pacoblaze_wrapper
+
+Top level modules:
+	LCD_Scope_Encapsulated_pacoblaze_wrapper
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/key2ascii.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/key2ascii.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module key2ascii
+
+Top level modules:
+	key2ascii
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_LCD.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_LCD.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module Write_Kbd_To_LCD
+
+Top level modules:
+	Write_Kbd_To_LCD
+
+} {} {}} D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/widereg.v {1 {vlog -work work -stats=none D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/widereg.v
+Model Technology ModelSim ALTERA vlog 10.3c Compiler 2014.09 Sep 20 2014
+-- Compiling module widereg
+
+Top level modules:
+	widereg
+
+} {} {}}

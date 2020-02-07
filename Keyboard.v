@@ -1,0 +1,90 @@
+`define character_B 8'h42 //back
+`define character_D 8'h44 //pause
+`define character_E 8'h45 //play
+`define character_F 8'h46 //forward
+`define character_lowercase_b 8'h62
+`define character_lowercase_d 8'h64
+`define character_lowercase_e 8'h65
+`define character_lowercase_f 8'h66
+
+`define idle 2'b00
+`define forward_play 2'b01
+`define backward_play 2'b10
+`define pause 2'b11
+
+module keyboard_fsm(clk, letters, direction);
+
+input clk;
+input [7:0] letters;
+output reg [2:0] direction;
+
+reg [1:0]state;
+reg [1:0]next;
+
+always @(posedge clk) begin
+state<=next;
+end
+
+
+always @(*) begin
+
+	case(state)
+	`idle: if((letters == (`character_E || `character_lowercase_e ))) begin
+		next <= `forward_play;
+		direction = 2'b01; end
+	
+		else if((letters == (`character_B ||  `character_lowercase_b))) begin
+		next <= `pause;
+		direction = 2'b10; end
+
+		else begin
+		next <= state;
+		direction = 2'b1x; end
+
+	`forward_play: if((letters == (`character_D || `character_lowercase_d))) begin
+		next <= `pause;
+		direction = 2'b11; end
+	
+		else if((letters == (`character_B || `character_lowercase_b))) begin
+		next <= `backward_play;
+		direction = 2'b00; end
+
+		else begin
+		next <= state;
+		direction = direction; end
+
+	`backward_play: if((letters == (`character_F || `character_lowercase_f))) begin
+		next <= `forward_play;
+		direction = 2'b01; end
+	
+		else if((letters == (`character_D || `character_lowercase_d))) begin
+		next <= `pause;
+		direction = 2'b10; end
+
+		else begin
+		next <= state;
+		direction = direction; end
+
+	`pause: if(((letters == (`character_E || `character_lowercase_e))&& direction[0] == 1'b1)) begin
+		next <= `forward_play;
+		direction = 2'b01; end
+	
+		else if(((letters == (`character_E || `character_lowercase_e))&& direction[0] == 1'b0)) begin
+		next <= `backward_play;
+		direction = 2'b00; end
+		
+		else if((letters == (`character_F || `character_lowercase_f))) begin
+		next <= state;
+		direction = 2'b11; end
+
+		else if((letters == (`character_D || `character_lowercase_d))) begin
+		next <= state;
+		direction = 2'b10; end
+
+		else begin
+		next <= state;
+		direction = direction;
+		end
+	endcase
+end
+endmodule

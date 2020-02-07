@@ -1,0 +1,215 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/altera/14.1
+vdoublesync
+Z0 !s110 1581117412
+!i10b 1
+!s100 h[h?dcIHcN;P79NdP34S[0
+IMGVZ5ecaBOI]MZCnJ2I;e3
+Z1 V`JN@9S9cnhjKRR_L]QIcM3
+Z2 dD:/akash/CPEN311/lab2_template_de1soc/template_de1soc
+Z3 w1580449380
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/doublesync.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/doublesync.v
+L0 1
+Z4 OV;L;10.3c;59
+r1
+!s85 0
+31
+!s108 1581117412.207000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/doublesync.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/doublesync.v|
+!i113 1
+Z5 o-work work
+vflash_controller
+R0
+!i10b 1
+!s100 E;IEYCeWeS2c=3_]5Kd[g3
+I8mkZY191AXf6F1XjGn[Qd3
+R1
+R2
+w1581115414
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Flash_controller.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Flash_controller.v
+L0 7
+R4
+r1
+!s85 0
+31
+!s108 1581117412.935000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Flash_controller.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Flash_controller.v|
+!i113 1
+R5
+vGenerate_Arbitrary_Divided_Clk32
+R0
+!i10b 1
+!s100 8=iGlzck0b@NKb_VFN7YH2
+IoKAP^3TK<]4ZYk^EU7OYW2
+R1
+R2
+R3
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Generate_Arbitrary_Divided_Clk32.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Generate_Arbitrary_Divided_Clk32.v
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1581117412.291000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Generate_Arbitrary_Divided_Clk32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Generate_Arbitrary_Divided_Clk32.v|
+!i113 1
+R5
+n@generate_@arbitrary_@divided_@clk32
+vKbd_ctrl
+R0
+!i10b 1
+!s100 CI06[H]^[Hn@czMKIDPVg3
+IeV4M_?2>U4Rc58^B]dO<W3
+R1
+R2
+R3
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Kbd_ctrl.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Kbd_ctrl.v
+L0 22
+R4
+r1
+!s85 0
+31
+!s108 1581117412.373000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Kbd_ctrl.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Kbd_ctrl.v|
+!i113 1
+R5
+n@kbd_ctrl
+vkey2ascii
+R0
+!i10b 1
+!s100 ^<?o;lZSLa>AebeLX[[lU1
+I?75jCG2@:3e>PA6fAFl691
+R1
+R2
+R3
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/key2ascii.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/key2ascii.v
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1581117412.461000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/key2ascii.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/key2ascii.v|
+!i113 1
+R5
+vkeyboard_fsm
+!s110 1581118678
+!i10b 1
+!s100 Yejg2dZ[hz6hzMef0U[cj2
+I3lj0PfR?]<2:`X=hPlP1k1
+R1
+R2
+w1581118621
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Keyboard.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Keyboard.v
+L0 15
+R4
+r1
+!s85 0
+31
+!s108 1581118678.926000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Keyboard.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Keyboard.v|
+!i113 1
+R5
+vLCD_Scope_Encapsulated_pacoblaze_wrapper
+R0
+!i10b 1
+!s100 FoFm9Xbm^6EPmFgPLScoo1
+IX_<;j:2_gP`IATk139UJI1
+R1
+R2
+R3
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/LCD_Scope_Encapsulated_pacoblaze_wrapper.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/LCD_Scope_Encapsulated_pacoblaze_wrapper.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1581117412.554000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/LCD_Scope_Encapsulated_pacoblaze_wrapper.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/LCD_Scope_Encapsulated_pacoblaze_wrapper.v|
+!i113 1
+R5
+n@l@c@d_@scope_@encapsulated_pacoblaze_wrapper
+vwidereg
+R0
+!i10b 1
+!s100 z;jGJN]RgGA;2BeodJ;5K1
+IXS0`T3Q5J:T6C29Sd@0IX1
+R1
+R2
+Z6 w1580449381
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/widereg.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/widereg.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1581117412.746000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/widereg.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/widereg.v|
+!i113 1
+R5
+vWrite_Kbd_To_LCD
+R0
+!i10b 1
+!s100 6LZOEHjZAAdDZ[<T;Sc7Q1
+Ig[5Z_XCU=COanTi3n@OnE1
+R1
+R2
+R6
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_LCD.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_LCD.v
+Z7 L0 21
+R4
+r1
+!s85 0
+31
+!s108 1581117412.843000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_LCD.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_LCD.v|
+!i113 1
+R5
+n@write_@kbd_@to_@l@c@d
+vWrite_Kbd_To_Scope_LCD
+R0
+!i10b 1
+!s100 a``?9?@fSUL[GYkNfNnSe0
+ICc]SXna8n^MlR50]@:fOO3
+R1
+R2
+R6
+8D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_Scope_LCD.v
+FD:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_Scope_LCD.v
+R7
+R4
+r1
+!s85 0
+31
+!s108 1581117412.128000
+!s107 D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_Scope_LCD.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/akash/CPEN311/lab2_template_de1soc/template_de1soc/Write_Kbd_To_Scope_LCD.v|
+!i113 1
+R5
+n@write_@kbd_@to_@scope_@l@c@d
