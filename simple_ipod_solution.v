@@ -223,20 +223,56 @@ wire Sample_Clk_Signal;
 // Insert your code for Lab2 here!
 //
 //
-
-//assign value of start using finish from flash_controller module
-wire finish_flash;
-wire start;
- flash_controller FLASH_FSM(.clk(CLK_50M), .start(start), .wait_request(flash_mem_waitrequest), .data_valid(flash_mem_readdatavalid)
-				, .read(flash_mem_read), .finish(finish_flash));
-
-
+wire direction;  //direction flag
+wire pause;  //pause and hold flag
+wire hold;
 wire            flash_mem_read;
 wire            flash_mem_waitrequest;
 wire    [22:0]  flash_mem_address;
 wire    [31:0]  flash_mem_readdata;
 wire            flash_mem_readdatavalid;
-wire    [3:0]   flash_mem_byteenable;
+wire    [3:0]   flash_mem_byteenable = 4'b1111;
+wire start;  //start flag
+wire clk_22hz;
+wire clk_new;
+
+wire clk_22_sync;
+wire clk_new_sync;
+wire finish;
+
+wire [7:0] audio_data;
+
+wire [31:0] clk_count_to; 
+
+//my_clock_divider clock22(.inclk(CLK_50M), .outclk(clk_22hz), .clk_count_to(32'd1136)));
+//clk divider for speed up and speed down count to values
+my_clock_divider clock22(.inclk(CLK_50M), .outclk(clk_new), .clk_count_to(clk_count_to));
+
+// spped control module
+speed speedcontrol(.clk(CLK_50M), .speed_up_event(speed_up_event), .speed_down_event(speed_down_event), .speed_reset_event(speed_reset_event), .clk_count_to(clk_count_to));
+
+//async_trap_and_reset_gen_1_pulse Sync_clk( .async_sig(clk_22hz), .outclk(CLK_50M), 
+		//.out_sync_sig(clk_22_sync), .auto_reset(1'b1), .reset(1'b1));
+
+//sync clk module
+async_trap_and_reset_gen_1_pulse Sync_clk( .async_sig(clk_new), .outclk(CLK_50M), 
+		.out_sync_sig(clk_new_sync), .auto_reset(1'b1), .reset(1'b1));
+
+// address inc/dec module
+address_change addr(.clk(CLK_50M), .direction(direction), .hold(hold), .address(flash_mem_address));
+
+//keyboard selector module
+keyboard_fsm keys(.clk(CLK_50M), .letters(kbd_received_ascii_code), .direction(direction), .pause(pause));
+
+//assign value of start using finish from flash_controller module
+//audio output module
+audio_out Output(.clk(CLK_50M), .clk_2(clk_new_sync), .finish(finish), .direction(direction), .pause(pause), .hold(hold), .audio_data(flash_mem_readdata), .audio_out(audio_data));
+
+//flash reading module
+flash_read FLASH_FSM(.clk(CLK_50M), .wait_request(flash_mem_waitrequest), .data_valid(flash_mem_readdatavalid)
+				, .start(pause), .read(flash_mem_read), .finish(finish));
+
+
 
 
 flash flash_inst (
@@ -258,7 +294,7 @@ assign Sample_Clk_Signal = Clock_1KHz;
 
 //Audio Generation Signal
 //Note that the audio needs signed data - so convert 1 bit to 8 bits signed
-wire [7:0] audio_data = {~Sample_Clk_Signal,{7{Sample_Clk_Signal}}}; //generate signed sample audio signal
+//wire [7:0] audio_data = {~Sample_Clk_Signal,{7{Sample_Clk_Signal}}}; //generate signed sample audio signal
 
 
 

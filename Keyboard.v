@@ -37,72 +37,43 @@ end
 
 
 
-
+// the states are encoded to have the pause and direction flags in the 2 lowest bits
 
 always @(*) begin
 
 	case(state)
-	`idle: begin 
-		if((letters == `character_E)) begin
-		next = `forward_play;
-		end
-	
-		else if((letters == `character_B) ) begin
-		next = `pause;
-		end
+	`idle: begin if((letters == `character_E)) begin  //same as pause when going forward  //if E then play forward
+		next = `forward_play; end
+		else if((letters == `character_B) ) begin  //if B then go to pause but backward
+		next = `pause; end
+		else next = `idle;end
 		
-		else 
-		next = `idle;
-		end
-		
-
-	`forward_play: begin
-		if((letters == `character_D) ) begin
-		next = `idle;
-		end
-	
-		else if((letters == `character_B) ) begin
-		next = `backward_play;
-		end
-
+	`forward_play: begin if((letters == `character_D) ) begin  //if d, go to idle, which is puase in a forward state
+		next = `idle; end
+		else if((letters == `character_B) ) begin  
+		next = `backward_play; end //if B then play  backwards
 		else begin
-		next = `forward_play;
-		end
-		end
-
-	`backward_play: begin
-		if((letters == `character_F)) begin
-		next = `forward_play;
-		end
-	
-		else if((letters == `character_D) ) begin
-		next = `pause;
+		next = `forward_play; end
 		end
 
+	`backward_play: begin if((letters == `character_F)) begin   //if F then play forwards
+		next = `forward_play; end
+		else if((letters == `character_D) ) begin  //if D then go to pause
+		next = `pause; end
 		else begin
-		next = `backward_play;
-		end
+		next = `backward_play; end
 		end
 
-	`pause: begin
-
-		if((letters == `character_E)) begin
-		next = `backward_play;
-		end
-	
-		else if((letters == `character_F))
+	`pause: begin if((letters == `character_E)) begin  //if E then play backwards
+		next = `backward_play; end
+		else if((letters == `character_F))  //if F then go to idle/forward pause
 		next = `idle;
-		
-		
 		else begin
-		next = state;
+		next = state; end
 		end
-		end
-
 
 	default: begin 
-		next = `idle;
-		end
+		next = `idle; end
 	endcase
 end
 
