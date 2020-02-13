@@ -7,84 +7,103 @@
 `define character_lowercase_e 8'h65
 `define character_lowercase_f 8'h66
 
-`define idle 2'b00
-`define forward_play 2'b01
-`define backward_play 2'b10
-`define pause 2'b11
+`define idle 4'b00_11
+`define forward_play 4'b01_01
+`define backward_play 4'b10_00
+`define pause 4'b11_10
 
-module keyboard_fsm(clk, letters, direction);
+module keyboard_fsm(clk, letters, direction, pause);
 
 input clk;
 input [7:0] letters;
-output reg [2:0] direction;
+output  direction ;
+output  pause ;
 
-reg [1:0]state;
-reg [1:0]next;
+// reg[1:0] next_direction;
+reg [3:0]state;
+reg [3:0]next;
+
+assign  direction = state[0];
+assign pause = state[1];
 
 always @(posedge clk) begin
 state<=next;
+
 end
+
+//always @(*) begin
+//direction <= next_direction;
+//end
+
+
+
 
 
 always @(*) begin
 
 	case(state)
-	`idle: if((letters == (`character_E || `character_lowercase_e ))) begin
-		next <= `forward_play;
-		direction = 2'b01; end
+	`idle: begin 
+		if((letters == `character_E)) begin
+		next = `forward_play;
+		end
 	
-		else if((letters == (`character_B ||  `character_lowercase_b))) begin
-		next <= `pause;
-		direction = 2'b10; end
-
-		else begin
-		next <= state;
-		direction = 2'b1x; end
-
-	`forward_play: if((letters == (`character_D || `character_lowercase_d))) begin
-		next <= `pause;
-		direction = 2'b11; end
-	
-		else if((letters == (`character_B || `character_lowercase_b))) begin
-		next <= `backward_play;
-		direction = 2'b00; end
-
-		else begin
-		next <= state;
-		direction = direction; end
-
-	`backward_play: if((letters == (`character_F || `character_lowercase_f))) begin
-		next <= `forward_play;
-		direction = 2'b01; end
-	
-		else if((letters == (`character_D || `character_lowercase_d))) begin
-		next <= `pause;
-		direction = 2'b10; end
-
-		else begin
-		next <= state;
-		direction = direction; end
-
-	`pause: if(((letters == (`character_E || `character_lowercase_e))&& direction[0] == 1'b1)) begin
-		next <= `forward_play;
-		direction = 2'b01; end
-	
-		else if(((letters == (`character_E || `character_lowercase_e))&& direction[0] == 1'b0)) begin
-		next <= `backward_play;
-		direction = 2'b00; end
+		else if((letters == `character_B) ) begin
+		next = `pause;
+		end
 		
-		else if((letters == (`character_F || `character_lowercase_f))) begin
-		next <= state;
-		direction = 2'b11; end
+		else 
+		next = `idle;
+		end
+		
 
-		else if((letters == (`character_D || `character_lowercase_d))) begin
-		next <= state;
-		direction = 2'b10; end
+	`forward_play: begin
+		if((letters == `character_D) ) begin
+		next = `idle;
+		end
+	
+		else if((letters == `character_B) ) begin
+		next = `backward_play;
+		end
 
 		else begin
-		next <= state;
-		direction = direction;
+		next = `forward_play;
+		end
+		end
+
+	`backward_play: begin
+		if((letters == `character_F)) begin
+		next = `forward_play;
+		end
+	
+		else if((letters == `character_D) ) begin
+		next = `pause;
+		end
+
+		else begin
+		next = `backward_play;
+		end
+		end
+
+	`pause: begin
+
+		if((letters == `character_E)) begin
+		next = `backward_play;
+		end
+	
+		else if((letters == `character_F))
+		next = `idle;
+		
+		
+		else begin
+		next = state;
+		end
+		end
+
+
+	default: begin 
+		next = `idle;
 		end
 	endcase
 end
+
 endmodule
